@@ -47,9 +47,15 @@ books.forEach(createBook);
 
 addBtn.addEventListener('click', (e) => {
   e.preventDefault();
-  const newBook = addBook(title.value, author.value);
-  createBook(newBook);
-  title.value = '';
-  author.value = '';
-  title.focus();
+
+  if (title.validity.valueMissing && author.validity.valueMissing) {
+    title.setCustomValidity('Please enter title!');
+    author.setCustomValidity('Please enter author\'s name');
+  } else {
+    const newBook = addBook(title.value, author.value);
+    createBook(newBook);
+    title.value = '';
+    author.value = '';
+    title.focus();
+  }
 });
