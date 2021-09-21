@@ -1,59 +1,41 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# Project Description
 
-> One paragraph statement about the project.
-
-![screenshot](./app_screenshot.png)
-
-Additional description about the project and its features.
+> The Awesome book's application allows you to add, remove, and display books from a booklist array. 
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- HTML 
+- CSS
+- JAVASCRIPT
 
 ## Live Demo
 
-[Live Demo Link](https://livedemo.com)
+[Live Demo Link](https://rawcdn.githack.com/shadabwahidullah/Awesome-Books/002633df80f01d71c9f7287f1d095fc314d35c28/index.html) :point_left:
 
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
+On Github, on the main page of the private-event repository, click the Code button and copy "Clone with HTTPS" by clicking the copy icon.
+In your terminal, enter a git clone and past the link that you copied from the repository, and press the   Enter
+(e.g. git clone git@github.com:shadabwahidullah/awesome_books.git).
 
-
-To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
-
-### Setup
-
-### Install
-
-### Usage
-
-### Run tests
-
-### Deployment
-
-
+## Usage
+To run this project you only need to open the index.html file in a web browser
+[Live Demo](https://rawcdn.githack.com/shadabwahidullah/Awesome-Books/002633df80f01d71c9f7287f1d095fc314d35c28/index.html) :point_left:
 
 ## Authors
 
-👤 **Author1**
+👤 **Wahidullah Shadab**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@githubhandle](https://github.com/shadabwahidullah)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/wahidullah-shadab-2712031a3)
 
-👤 **Author2**
+👤 **Qoosim AbdulGhaniyy**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@githubhandle](https://github.com/Qoosim)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/qoosim)
 
 ## 🤝 Contributing
 
