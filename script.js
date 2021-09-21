@@ -1,40 +1,18 @@
+const booksList = new Booklist();
+
 const title = document.getElementById('title');
 const author = document.getElementById('author');
 const addBtn = document.querySelector('.btnAdd');
 const list = document.querySelector('.booklist');
 
-let books = JSON.parse(localStorage.getItem('books')) || [];
+// let books = JSON.parse(localStorage.getItem('books')) || [];
 
-// function to add books
-function addBook(title, author, date) {
-  books.push({ title, author, date });
-  localStorage.setItem('books', JSON.stringify(books));
-  return { title, author, date };
-}
-
-// let modifiedBooks;
-// function to remove book
-function removeBook(element) {
-  if (element.classList.contains('remove')) {
-    const removeItem = element.parentElement;
-
-    books = books.filter((book) => {
-      if (book.date !== element.id) {
-        return true;
-      }
-      return false;
-    });
-    removeItem.remove();
-    localStorage.setItem('books', JSON.stringify(books));
-  }
-}
-
-function createBook({ title, author, date }) {
+function createBook({ title, author, id }) {
   const divWrapper = document.createElement('div');
   const titleHeader = document.createElement('h3');
   const authorHeader = document.createElement('h3');
   const removebtn = document.createElement('button');
-  removebtn.id = date;
+  removebtn.id = id;
   const hrLine = document.createElement('hr');
 
   titleHeader.innerText = title;
@@ -47,11 +25,11 @@ function createBook({ title, author, date }) {
 
   removebtn.addEventListener('click', (e) => {
     const removeItem = e.target;
-    removeBook(removeItem);
+    booksList.removeBook(removeItem, removeItem.id);
   });
 }
 
-books.forEach(createBook);
+booksList.books.forEach(createBook);
 
 addBtn.addEventListener('click', (e) => {
   e.preventDefault();
@@ -60,7 +38,7 @@ addBtn.addEventListener('click', (e) => {
     title.setCustomValidity('Please enter title!');
     author.setCustomValidity("Please enter author's name");
   } else {
-    const newBook = addBook(
+    const newBook = booksList.addBook(
       title.value,
       author.value,
       new Date().getTime().toString(),
