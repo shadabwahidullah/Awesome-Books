@@ -13,21 +13,18 @@ function addBook(title, author) {
 }
 
 // function to remove book
-function removeBook(element) {
-  if (element.classList.contains('remove')) {
-    const removeItem = element.parentElement;
-    books.splice(removeItem, 1);
-    removeItem.remove();
-    localStorage.setItem('books', JSON.stringify(books));
-  }
+/*function removeBook(element) {
+  if (element.classList.contains('remove')) {}
 }
-
+*/
 function createBook({ title, author }) {
   const divWrapper = document.createElement('div');
   const titleHeader = document.createElement('h3');
   const authorHeader = document.createElement('h3');
   const removebtn = document.createElement('button');
   const hrLine = document.createElement('hr');
+  const listItem = document.createElement('li');
+  listItem.style.listStyle = 'none';
 
   titleHeader.innerText = title;
   authorHeader.innerText = author;
@@ -35,11 +32,11 @@ function createBook({ title, author }) {
   removebtn.classList.add('remove');
 
   divWrapper.append(titleHeader, authorHeader, removebtn, hrLine);
-  list.appendChild(divWrapper);
+  listItem.appendChild(divWrapper);
+  list.appendChild(listItem);
 
   removebtn.addEventListener('click', (e) => {
-    const removeItem = e.target;
-    removeBook(removeItem);
+    console.log(e.target.parentElement.parentElement);
   });
 }
 
