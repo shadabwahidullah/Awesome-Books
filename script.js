@@ -1,11 +1,9 @@
-const booksList = new Booklist();
+const booksList = new Booklist();// eslint-disable-line no-undef
 
 const title = document.getElementById('title');
 const author = document.getElementById('author');
 const addBtn = document.querySelector('.btnAdd');
 const list = document.querySelector('.booklist');
-
-// let books = JSON.parse(localStorage.getItem('books')) || [];
 
 function createBook({ title, author, id }) {
   const divWrapper = document.createElement('div');
