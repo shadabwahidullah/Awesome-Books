@@ -3,14 +3,12 @@ class Booklist {// eslint-disable-line no-unused-vars
     this.books = JSON.parse(localStorage.getItem('books')) || [];
   }
 
-  // function to add books
   addBook(title, author, id) {
-    this.books.push({ title, author, id });
+    this.books.concat({ title, author, id });
     localStorage.setItem('books', JSON.stringify(this.books));
     return { title, author, id };
   }
 
-  // function to remove book
   removeBook(element, id) {
     if (element.classList.contains('remove')) {
       const removeItem = element.parentElement;
