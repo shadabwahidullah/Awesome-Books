@@ -4,7 +4,7 @@ class Booklist {// eslint-disable-line no-unused-vars
   }
 
   addBook(title, author, id) {
-    this.books.concat({ title, author, id });
+    this.books.push({ title, author, id });
     localStorage.setItem('books', JSON.stringify(this.books));
     return { title, author, id };
   }
