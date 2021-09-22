@@ -29,8 +29,7 @@ function createBook({ title, author, id }) {
 
   removeBtn.addEventListener("click", (e) => {
     const removeItem = e.target;
-    list.style.display = booksList.books.length === 0 ? 'none' : 'block' ;
-    booksList.removeBook(removeItem, removeItem.id);
+    booksList.removeBook(removeItem, removeItem.id, removeItem.parentElement.parentElement);
   });
 
   list.style.display = booksList.books.length === 0 ? 'none' : 'block' ;
