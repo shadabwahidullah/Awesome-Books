@@ -7,21 +7,25 @@ const list = document.querySelector('.booklist');
 
 function createBook({ title, author, id }) {
   const divWrapper = document.createElement('div');
+  divWrapper.classList.add('row');
   const titleHeader = document.createElement('h3');
+  titleHeader.classList.add('col');
   const authorHeader = document.createElement('h3');
-  const removebtn = document.createElement('button');
-  removebtn.id = id;
+  authorHeader.classList.add('col');
+  const removeBtn = document.createElement('button');
+  removeBtn.classList.add('col');
+  removeBtn.id = id;
   const hrLine = document.createElement('hr');
 
-  titleHeader.innerText = title;
+  titleHeader.innerHTML = `${title} by`;
   authorHeader.innerText = author;
-  removebtn.textContent = 'Remove';
-  removebtn.classList.add('remove');
+  removeBtn.textContent = 'Remove';
+  removeBtn.classList.add('remove');
 
-  divWrapper.append(titleHeader, authorHeader, removebtn, hrLine);
+  divWrapper.append(titleHeader, authorHeader, removeBtn, hrLine);
   list.appendChild(divWrapper);
 
-  removebtn.addEventListener('click', (e) => {
+  removeBtn.addEventListener('click', (e) => {
     const removeItem = e.target;
     booksList.removeBook(removeItem, removeItem.id);
   });
