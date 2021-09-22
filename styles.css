@@ -7,6 +7,7 @@
 body {
   margin: 20%;
 }
-.custom-row:nth-child(odd){
+
+.custom-row:nth-child(odd) {
   background-color: #ccc;
 }
