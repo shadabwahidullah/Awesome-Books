@@ -4,6 +4,13 @@ const title = document.getElementById('title');
 const author = document.getElementById('author');
 const addBtn = document.querySelector('.btnAdd');
 const list = document.querySelector('.booklist');
+const theList = document.querySelector('.theList');
+const theForm = document.querySelector('.theForm');
+const theContact = document.querySelector('.theContact');
+const listItem = document.getElementById('listItem');
+const newForm  = document.getElementById('newForm');
+const contactInfo = document.getElementById('contactInfo');
+
 
 function createBook({ title, author, id }) {
   const divWrapper = document.createElement('div');
@@ -60,3 +67,26 @@ addBtn.addEventListener('click', (e) => {
     title.focus();
   }
 });
+
+listItem.addEventListener('click', (e) => {
+  e.preventDefault();
+  theList.classList.remove('hidden');
+  theForm.classList.add('hidden');
+  theContact.classList.add('hidden');
+})
+
+newForm.addEventListener('click', (e) => {
+  e.preventDefault();
+
+  theList.classList.add('hidden');
+  theForm.classList.remove('hidden');
+  theContact.classList.add('hidden');
+})
+
+contactInfo.addEventListener('click', (e) => {
+  e.preventDefault();
+
+  theList.classList.add('hidden');
+  theForm.classList.add('hidden');
+  theContact.classList.remove('hidden');
+})

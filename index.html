@@ -18,21 +18,21 @@
       <nav class="navbar">
         <h3 class="p-3">Awesome Books</h3>
         <ul class="nav nav-tabs p-3 fs-5">
-          <li class="nav-item"><a class="nav-link active" href="">List</a></li>
-          <li class="nav-item"><a class="nav-link" href="">Add new</a></li>
-          <li class="nav-item"><a class="nav-link" href="">Contact</a></li>
+          <li class="nav-item" id="listItem"><a class="nav-link" href="">List</a></li>
+          <li class="nav-item" id="newForm"><a class="nav-link" href="">Add new</a></li>
+          <li class="nav-item" id="contactInfo"><a class="nav-link" href="">Contact</a></li>
         </ul>
       </nav>
     </header>
-    <main class="container w-50 mx-auto text-center">
-      <section class="theList">
+    <main class="container w-50">
+      <section class="theList mx-auto text-center">
         <h1 class="fw-bolder mb-5 mt-5">Awesome Books</h1>
         <div class="booklist border border-2"></div>
         <hr class="w-25 mx-auto border border-danger rounded border-3 hidden" />
       </section>
       <section class="theForm hidden">
         <form class="w-50 mx-auto">
-          <h3 class="fw-bold mb-3">Add a new book</h3>
+          <h3 class="fw-bold mb-4 mt-4 text-center">Add a new book</h3>
           <input
             type="text"
             class="form-control mb-3"
@@ -52,12 +52,21 @@
           <button type="submit" class="btn btn-primary btnAdd">Add</button>
         </form>
       </section>
-      <section class="theContact"></section>
+      <section class="text-left theContact hidden">
+        <h2 class="fw-bolder mb-4 mt-4 text-center">Contact information</h2>
+        <p>Do you have any questions or you just want to say 'Hello'?<br>
+           You can react out to us:
+           <ul class="list">
+             <li>Our e-mail: our@gmail.com</li>
+             <li>Our phone numbers: +999-08080808, +555-897654</li>
+             <li>Our address: Flat 001, Freedom city.</li>
+           </ul>
+        </p>
+      </section>
      
     </main>
     <footer class="container border-top fixed-bottom">
-      <small class="text-muted p-3 "
-        >Copyright &copy;
+      <small class="text-muted p-3 ">Copyright &copy;
         <script>
           document.write(new Date().getFullYear());
         </script>
