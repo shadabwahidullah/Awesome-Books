@@ -12,12 +12,7 @@ class Booklist {// eslint-disable-line no-unused-vars
   removeBook(element, id, parent) {
     if (element.classList.contains('remove')) {
       const removeItem = element.parentElement;
-      this.books = this.books.filter((book) => {
-        if (book.id !== id) {
-          return true;
-        }
-        return false;
-      });
+      this.books = this.books.filter((book) => book.id !== id);
       removeItem.remove();
       localStorage.setItem('books', JSON.stringify(this.books));
     }
