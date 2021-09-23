@@ -15,16 +15,17 @@
   </head>
   <body class="container">
     <header>
-      <nav class="navbar">
-        <h3 class="p-3">Awesome Books</h3>
-        <ul class="nav nav-tabs p-3 fs-5">
-          <li class="nav-item nav-link list-item active" id="listItem">List</li> 
-          <li class="nav-item nav-link list-item" id="newForm">Add new</li>
-          <li class="nav-item nav-link list-item" id="contactInfo">Contact</li>
+      <nav class="navbar border-bottom">
+        <h3 class="p-3 cursor" id='brand'>Awesome Books</h3>
+        <ul class="nav nav-tabs custom-nav-tabs p-3 fs-5">
+          <li class="nav-item nav-link cursor active" id="listItem">List</li> 
+          <li class="nav-item nav-link cursor" id="newForm">Add new</li>
+          <li class="nav-item nav-link cursor" id="contactInfo">Contact</li>
         </ul>
       </nav>
     </header>
-    <main class="container w-50">
+    <main class="container">
+      <p id="dateAndTime"> date and dateAndTime</p>
       <section class="theList mx-auto text-center">
         <h1 class="fw-bolder mb-5 mt-5">Awesome Books</h1>
         <div class="booklist border border-2"></div>
@@ -32,7 +33,7 @@
       </section>
       <section class="theForm hidden">
         <form class="w-50 mx-auto">
-          <h3 class="fw-bold mb-4 mt-4 text-center">Add a new book</h3>
+          <h3 class="fw-bold mb-5 mt-5 text-center">Add a new book</h3>
           <input
             type="text"
             class="form-control mb-3"
@@ -49,11 +50,11 @@
             placeholder="Author"
             required
           />
-          <button type="submit" class="btn btn-primary btnAdd">Add</button>
+          <button type="submit" class="btn btn-primary btnAdd float-end">Add</button>
         </form>
       </section>
-      <section class="text-left theContact hidden">
-        <h2 class="fw-bolder mb-4 mt-4 text-center">Contact information</h2>
+      <section class="text-left w-50 mx-auto theContact hidden">
+        <h2 class="fw-bolder mb-5 mt-5 text-center">Contact information</h2>
         <p>Do you have any questions or you just want to say 'Hello'?<br>
            You can react out to us:
            <ul class="list">
@@ -65,7 +66,7 @@
       </section>
      
     </main>
-    <footer class="container border-top fixed-bottom">
+    <footer class="border-top fixed-bottom custom-footer">
       <small class="text-muted p-3 ">Copyright &copy;
         <script>
           document.write(new Date().getFullYear());
@@ -77,5 +78,6 @@
     <script src="book.js" defer></script>
     <script src="bookList.js" defer></script>
     <script src="script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@2.0.2/build/global/luxon.min.js"></script>
   </body>
 </html>

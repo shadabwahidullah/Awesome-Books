@@ -10,6 +10,14 @@ const theContact = document.querySelector('.theContact');
 const listItem = document.getElementById('listItem');
 const newForm  = document.getElementById('newForm');
 const contactInfo = document.getElementById('contactInfo');
+const brand = document.getElementById('brand');
+const dateAndTime = document.getElementById('dateAndTime');
+
+const DateTime = luxon.DateTime
+dt = DateTime.utc().toLocal();
+const myTime = dt.toLocaleString(DateTime.DATETIME_MED_WITH_SECONDS); 
+
+dateAndTime.innerText = myTime;
 
 
 function createBook({ title, author, id }) {
@@ -66,6 +74,15 @@ addBtn.addEventListener('click', (e) => {
     author.value = '';
     title.focus();
   }
+});
+
+brand.addEventListener('click',() => {
+  listItem.classList.add('active');
+  theList.classList.remove('hidden');
+  theForm.classList.add('hidden');
+  newForm.classList.remove('active');
+  theContact.classList.add('hidden');
+  contactInfo.classList.remove('active');
 });
 
 listItem.addEventListener('click', () => {
