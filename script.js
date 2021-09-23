@@ -8,17 +8,16 @@ const theList = document.querySelector('.theList');
 const theForm = document.querySelector('.theForm');
 const theContact = document.querySelector('.theContact');
 const listItem = document.getElementById('listItem');
-const newForm  = document.getElementById('newForm');
+const newForm = document.getElementById('newForm');
 const contactInfo = document.getElementById('contactInfo');
 const brand = document.getElementById('brand');
 const dateAndTime = document.getElementById('dateAndTime');
 
-const DateTime = luxon.DateTime
-dt = DateTime.utc().toLocal();
-const myTime = dt.toLocaleString(DateTime.DATETIME_MED_WITH_SECONDS); 
+const { DateTime } = luxon; // eslint-disable-line no-undef
+dt = DateTime.utc().toLocal(); // eslint-disable-line no-undef
+const t = dt.toLocaleString(DateTime.DATETIME_MED_WITH_SECONDS); // eslint-disable-line no-undef
 
-dateAndTime.innerText = myTime;
-
+dateAndTime.innerText = t;
 
 function createBook({ title, author, id }) {
   const divWrapper = document.createElement('div');
@@ -76,7 +75,7 @@ addBtn.addEventListener('click', (e) => {
   }
 });
 
-brand.addEventListener('click',() => {
+brand.addEventListener('click', () => {
   listItem.classList.add('active');
   theList.classList.remove('hidden');
   theForm.classList.add('hidden');
@@ -92,7 +91,7 @@ listItem.addEventListener('click', () => {
   newForm.classList.remove('active');
   theContact.classList.add('hidden');
   contactInfo.classList.remove('active');
-})
+});
 
 newForm.addEventListener('click', () => {
   newForm.classList.add('active');
@@ -101,7 +100,7 @@ newForm.addEventListener('click', () => {
   theForm.classList.remove('hidden');
   theContact.classList.add('hidden');
   contactInfo.classList.remove('active');
-})
+});
 
 contactInfo.addEventListener('click', () => {
   contactInfo.classList.add('active');
@@ -110,4 +109,4 @@ contactInfo.addEventListener('click', () => {
   theForm.classList.add('hidden');
   newForm.classList.remove('active');
   theContact.classList.remove('hidden');
-})
+});

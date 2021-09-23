@@ -12,19 +12,21 @@
   cursor: pointer;
 }
 
-.custom-nav-tabs{
+.custom-nav-tabs {
   border: none !important;
 }
 
-#dateAndTime{
+#dateAndTime {
   text-align: end;
   padding: 10px;
   font-weight: bold;
 }
-.custom-footer{
+
+.custom-footer {
   display: flex;
-  margin: 0px  9vw ;
+  margin: 0  9vw;
 }
+
 .custom-row:nth-child(odd) {
   background-color: rgb(235, 230, 230);
 }
