@@ -4,13 +4,14 @@
   box-sizing: border-box;
 }
 
-.fullpage{
-  height: 100%;
-}
-
-.hidden{
+.hidden {
   display: none;
 }
+
+.list-item {
+  cursor: pointer;
+}
+
 .custom-row:nth-child(odd) {
   background-color: #ccc;
 }

@@ -68,25 +68,29 @@ addBtn.addEventListener('click', (e) => {
   }
 });
 
-listItem.addEventListener('click', (e) => {
-  e.preventDefault();
+listItem.addEventListener('click', () => {
+  listItem.classList.add('active');
   theList.classList.remove('hidden');
   theForm.classList.add('hidden');
+  newForm.classList.remove('active');
   theContact.classList.add('hidden');
+  contactInfo.classList.remove('active');
 })
 
-newForm.addEventListener('click', (e) => {
-  e.preventDefault();
-
+newForm.addEventListener('click', () => {
+  newForm.classList.add('active');
   theList.classList.add('hidden');
+  listItem.classList.remove('active');
   theForm.classList.remove('hidden');
   theContact.classList.add('hidden');
+  contactInfo.classList.remove('active');
 })
 
-contactInfo.addEventListener('click', (e) => {
-  e.preventDefault();
-
+contactInfo.addEventListener('click', () => {
+  contactInfo.classList.add('active');
   theList.classList.add('hidden');
+  listItem.classList.remove('active');
   theForm.classList.add('hidden');
+  newForm.classList.remove('active');
   theContact.classList.remove('hidden');
 })
