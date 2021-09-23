@@ -1,4 +1,4 @@
-const booksList = new Booklist();// eslint-disable-line no-undef
+const booksList = new Booklist(); // eslint-disable-line no-undef
 
 const title = document.getElementById('title');
 const author = document.getElementById('author');
@@ -7,34 +7,46 @@ const list = document.querySelector('.booklist');
 
 function createBook({ title, author, id }) {
   const divWrapper = document.createElement('div');
+  divWrapper.classList.add(
+    'row',
+    'm-1',
+    'justify-content-center',
+    'custom-row',
+  );
   const titleHeader = document.createElement('h3');
-  const authorHeader = document.createElement('h3');
-  const removebtn = document.createElement('button');
-  removebtn.id = id;
-  const hrLine = document.createElement('hr');
+  titleHeader.classList.add('col-sm-9', 'text-start');
+  const removeBtn = document.createElement('button');
+  removeBtn.classList.add('col-sm-3');
+  removeBtn.id = id;
 
-  titleHeader.innerText = title;
-  authorHeader.innerText = author;
-  removebtn.textContent = 'Remove';
-  removebtn.classList.add('remove');
+  titleHeader.innerHTML = `"${title}" by ${author}`;
+  removeBtn.textContent = 'Remove';
+  removeBtn.classList.add('remove', 'btn-danger', 'rounded');
 
-  divWrapper.append(titleHeader, authorHeader, removebtn, hrLine);
+  divWrapper.append(titleHeader, removeBtn);
   list.appendChild(divWrapper);
 
-  removebtn.addEventListener('click', (e) => {
+  removeBtn.addEventListener('click', (e) => {
     const removeItem = e.target;
-    booksList.removeBook(removeItem, removeItem.id);
+    booksList.removeBook(removeItem, removeItem.id, removeItem.parentElement.parentElement);
   });
+
+  list.style.display = booksList.books.length === 0 ? 'none' : 'block';
 }
+
+list.style.display = booksList.books.length === 0 ? 'none' : 'block';
 
 booksList.books.forEach(createBook);
 
 addBtn.addEventListener('click', (e) => {
   e.preventDefault();
 
-  if (title.validity.valueMissing && author.validity.valueMissing) {
+  if (title.validity.valueMissing) {
     title.setCustomValidity('Please enter title!');
+    title.reportValidity();
+  } else if (author.validity.valueMissing) {
     author.setCustomValidity("Please enter author's name");
+    author.reportValidity();
   } else {
     const newBook = booksList.addBook(
       title.value,
