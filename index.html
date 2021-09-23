@@ -5,24 +5,68 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
   </head>
-  <body>
-    <main class='container w-50 mx-auto text-center'>
-      <h1 class="fw-bolder mb-5 mt-5">Awesome Books</h1>
-      <div class='booklist border border-2'></div>
-      <hr class="w-25 mx-auto border border-danger rounded border-3">
-      <form class="w-50 mx-auto">
-        <h3 class="fw-bold mb-3">Add a new book</h3>
-        <input type="text" class="form-control mb-3" name="title" id="title" placeholder="Title" required>
-        <input type="text" class="form-control mb-3" name="author" id="author" placeholder="Author" required>
-        <button type="submit" class='btn btn-primary float-end btnAdd'>Add</button>
-      </form>
+  <body class="container">
+    <header>
+      <nav class="navbar">
+        <h3 class="p-3">Awesome Books</h3>
+        <ul class="nav nav-tabs p-3 fs-5">
+          <li class="nav-item"><a class="nav-link active" href="">List</a></li>
+          <li class="nav-item"><a class="nav-link" href="">Add new</a></li>
+          <li class="nav-item"><a class="nav-link" href="">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="container w-50 mx-auto text-center">
+      <section class="theList">
+        <h1 class="fw-bolder mb-5 mt-5">Awesome Books</h1>
+        <div class="booklist border border-2"></div>
+        <hr class="w-25 mx-auto border border-danger rounded border-3 hidden" />
+      </section>
+      <section class="theForm hidden">
+        <form class="w-50 mx-auto">
+          <h3 class="fw-bold mb-3">Add a new book</h3>
+          <input
+            type="text"
+            class="form-control mb-3"
+            name="title"
+            id="title"
+            placeholder="Title"
+            required
+          />
+          <input
+            type="text"
+            class="form-control mb-3"
+            name="author"
+            id="author"
+            placeholder="Author"
+            required
+          />
+          <button type="submit" class="btn btn-primary btnAdd">Add</button>
+        </form>
+      </section>
+      <section class="theContact"></section>
+     
     </main>
+    <footer class="container border-top fixed-bottom">
+      <small class="text-muted p-3 "
+        >Copyright &copy;
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+        Wahidullah Shadab & Qoosim Abdulghaniyy <br />
+        All Rights Reserved</small>
+    </footer>
 
-    <script src='book.js' defer></script>
-    <script src='bookList.js' defer></script>
-    <script src='script.js' defer></script>
+    <script src="book.js" defer></script>
+    <script src="bookList.js" defer></script>
+    <script src="script.js" defer></script>
   </body>
 </html>

@@ -4,10 +4,13 @@
   box-sizing: border-box;
 }
 
-body {
-  margin: 20%;
+.fullpage{
+  height: 100%;
 }
 
+.hidden{
+  display: none;
+}
 .custom-row:nth-child(odd) {
   background-color: #ccc;
 }
